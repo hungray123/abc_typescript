@@ -50,7 +50,7 @@ const Styles = StyleSheet.create({
 
 })
 
-const LoginHome: React.FC<{}>=()=>{
+const LoginHome: React.FC<{navigation:any}>=({navigation})=>{
     return(
         <View>
             <View  style={Styles.containerImage}>

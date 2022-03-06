@@ -31,7 +31,7 @@ type Props={
 const ButtonLogin: React.FC<Props>=({title,navigation}:Props)=>{
 
     return(
-        <TouchableOpacity onPress={()=>{navigation.navigate('SingleFootball')}}>
+        <TouchableOpacity onPress={()=>{navigation.navigate(View)}}>
             <View>
                 <Text style={styles.ButtonText} >{title}</Text>
             </View>
