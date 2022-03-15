@@ -75,14 +75,14 @@ const HomeBooking: React.FC<{navigation:any}>=({navigation})=>{
            
            <View style={{flex:1,height:'100%',zIndex:5}}>
            <View style={{flexDirection:'row',alignItems:'center',marginHorizontal:10,marginTop:25}}>
-                    <Icon   name='menu'  type='ionicons' size={40} />
-                    <Text style={{fontWeight:'bold',fontSize:18}}>Sân thể thao Sport 365</Text>
+                    <Icon  color="#696969"  name='menu'  type='ionicons' size={40} />
+                    <Text style={{fontWeight:'bold',fontSize:18,color:'#696969'}}>Sân thể thao Sport 365</Text>
                 </View>
               
               
            <Agenda
            current={currentDate}
-           theme={{ agendaDayTextColor: 'yellow', agendaKnobColor: 'blue',calendarBackground:'pink'}}
+           theme={{ agendaDayTextColor: 'yellow', agendaKnobColor: '#696969',calendarBackground:'white'}}
            />
            </View>
           

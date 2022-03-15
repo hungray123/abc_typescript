@@ -144,6 +144,7 @@ const Login: React.FC<Props> = ({ navigation }) => {
 
   const onTapLogin = () => {
     dispatch(onLogin(data.username, data.password));
+    console.log(data.username)
   };
 
   const textInputChange = (val: string) => {
@@ -225,14 +226,14 @@ const Login: React.FC<Props> = ({ navigation }) => {
     <View style={styles.container}>
       <View style={styles.form}>
         <View style={{ flexDirection: "row", justifyContent: "center" }}>
-          <Text style={styles.Title}>WELLCOME12😀</Text>
+          <Text style={styles.Title}>😀😀😀</Text>
         </View>
         <View style={styles.form}>
           <View style={styles.text_user}>
             <TextInput
               style={{ flex: 1 }}
               autoCapitalize="none"
-              placeholder="Username"
+              placeholder="Tài khoản"
               onChangeText={(val) => textInputChange(val)}
               //onEndEditing={(e) => handleValidUser(e.nativeEvent.text)}
             />
@@ -252,7 +253,7 @@ const Login: React.FC<Props> = ({ navigation }) => {
 
           <View style={styles.text_pass}>
             <TextInput
-              placeholder="Password"
+              placeholder="Mật khẩu"
               style={{ flex: 1 }}
               onChangeText={(val) => handlePasswordChange(val)}
               secureTextEntry={data.secureTextEntry ? true : false}
@@ -279,7 +280,7 @@ const Login: React.FC<Props> = ({ navigation }) => {
               onTapLogin();
             }}
           >
-            <Text style={styles.ButtonText}>LOGIN ➜</Text>
+            <Text style={styles.ButtonText}>Đăng nhập ➜</Text>
           </TouchableOpacity>
         </View>
 

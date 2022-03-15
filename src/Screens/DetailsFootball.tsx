@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { View ,Text, Button, TextInput,StyleSheet,Image, TouchableOpacity} from "react-native";
 import { Icon } from "react-native-elements";
+import { useDispatch } from "react-redux";
 import Images from "../Themes/Images";
 
 const o_vuong=[
@@ -42,14 +43,16 @@ const DetailsFootball: React.FC<{navigation:any,route:any}>=({navigation,route})
         )
        
     },[])
-   
+    const dispatch = useDispatch();
     // nút back lại đây
-    function back(){
+    function next(){
         //const {params} =route;
         //console.warn("check",params);
        // alert({params})
        // params.callback();//gọi  hàm callback
-       const aa= navigation.navigate('Sân 7',{screen:'HomeBooking',hung:id,});// truyền lại về View A
+       //const aa= navigation.navigate('Sân 7',{screen:'HomeBooking',hung:id,});// truyền lại về View A
+       const aa= navigation.navigate('PaymentScreen',{ID_goback:id});// truyền lại về View A
+       
         // console.warn(aa)
         // const {goBack}=navigation;
     
@@ -114,7 +117,7 @@ const DetailsFootball: React.FC<{navigation:any,route:any}>=({navigation,route})
 
                 <View>
                     {/* <Text style={styles.btn_ss} onPress={()=>navigation.navigate('NavigationBack',{ix:5})}> ĐẶT SÂN</Text> */}
-                    <Text style={styles.btn_ss} onPress={()=>back()}> ĐẶT SÂN</Text>
+                    <Text style={styles.btn_ss} onPress={()=>next()}> ĐẶT SÂN</Text>
                 </View>
 
             </View> 
@@ -147,6 +150,7 @@ const  styles =StyleSheet.create({
         marginHorizontal:20,
         marginTop:-160,
         borderRadius:10,
+        elevation:20,
     },
     body_wrap:{
         marginHorizontal:10,

@@ -10,6 +10,7 @@ import Play from '../Components/Play';
 import Datsan from '../Components/Datsan';
 import Profile from '../Screens/Login/Profile';
 import Navigation_Profile from '../Screens/Login/Navigation_Profile';
+import FindPitch from '../Screens/FindPitch';
 const Tab= createBottomTabNavigator();
 
 const Navigation: React.FC=()=>{
@@ -19,7 +20,7 @@ const Navigation: React.FC=()=>{
                 <Tab.Screen
                         name="Home"
                         options={{tabBarIcon:()=><TouchableOpacity><Text><Icon name='home' type='material-icons' size={30}/></Text></TouchableOpacity>}}
-                        component={Play}/>
+                        component={FindPitch}/>
                 <Tab.Screen 
                     name="Đặt sân" 
                     options={{tabBarIcon:()=>
@@ -28,11 +29,11 @@ const Navigation: React.FC=()=>{
                     component={Datsan}/>
                  <Tab.Screen 
                     name="Cửa hàng" 
-                    options={{tabBarIcon:()=><TouchableOpacity><Text><Icon name='store' type='material-icons' size={30} color='blue'/></Text></TouchableOpacity>}}
+                    options={{tabBarIcon:()=><TouchableOpacity><Text><Icon name='store' type='material-icons' size={30} color='#DAA520'/></Text></TouchableOpacity>}}
                     component={View}/>
                      <Tab.Screen  
                     name="Cá nhân" 
-                    options={{tabBarIcon:()=><TouchableOpacity><Text><Icon name='person' type='material-icons' size={30} color='pink'/></Text></TouchableOpacity>}}
+                    options={{tabBarIcon:()=><TouchableOpacity><Text><Icon name='person' type='material-icons' size={30} color='#4B0082'/></Text></TouchableOpacity>}}
                     component={Navigation_Profile}/>
              </Tab.Navigator>
       

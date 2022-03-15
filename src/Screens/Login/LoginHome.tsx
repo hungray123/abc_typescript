@@ -1,5 +1,5 @@
 import React from 'react';
-import {View,Text,StyleSheet,Image, TouchableOpacity, Button} from 'react-native';
+import {View,Text,StyleSheet,Image, TouchableOpacity, Button, StatusBar} from 'react-native';
 
 import { Icon } from 'react-native-elements';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
@@ -45,6 +45,7 @@ const Styles = StyleSheet.create({
     Form:{
        flexDirection:'row',
        height:'100%',
+       backgroundColor:'white'
       
     }
 
@@ -52,15 +53,16 @@ const Styles = StyleSheet.create({
 
 const LoginHome: React.FC<{navigation:any}>=({navigation})=>{
     return(
-        <View>
+        <View style={{backgroundColor:'white'}}>
+             {/* <StatusBar backgroundColor='white'  barStyle="dark-content"/> */}
             <View  style={Styles.containerImage}>
                 <Image source={Images.Logo} style={Styles.Logo} />
                 {/* <Button  onPress={()=>{navigation.navigate("SingleFootball")}}  title="LOGIN ➜"/>  */}
             </View>
             <View style={Styles.Form}>
                 <Tab.Navigator>
-                <Tab.Screen name="Login" component={Login} />
-                <Tab.Screen name="SIGNUP" component={SIGNUP} />
+                <Tab.Screen name="Đăng nhập" component={Login} />
+                <Tab.Screen name="Đăng ký" component={SIGNUP} />
                 </Tab.Navigator>
             </View>
             {/* <View>

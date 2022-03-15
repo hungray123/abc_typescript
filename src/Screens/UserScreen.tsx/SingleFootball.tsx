@@ -237,7 +237,7 @@ const o_vuong4=[
                     <Text style={Styles.TextTimef}>16:30</Text>
                     <Text style={Styles.TextTimef}>18:00</Text>
                     <Text style={Styles.TextTimef}>19:30</Text>
-                    <Text style={Styles.TextTimef}>21:30</Text>
+                    {/* <Text style={Styles.TextTimef}>21:30</Text> */}
                   
                 </View>
                 
@@ -320,7 +320,7 @@ const o_vuong4=[
                             ))
                         }
                     </View>
-                    <View style={Styles.Th}>
+                    {/* <View style={Styles.Th}>
                         {
                             o_vuong4.map((item,index)=>(
                                                                                         //em truyền cái id,với cái hàm callback
@@ -341,7 +341,7 @@ const o_vuong4=[
                               </View>
                             ))
                         }
-                    </View>
+                    </View> */}
                   
                     {/* <View style={Styles.Th}>    
                             <Text style={Styles.ButtonA} onPress={()=>{navigation.navigate('DetaisFootball',{id:4})}}>

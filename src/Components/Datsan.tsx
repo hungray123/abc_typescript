@@ -9,11 +9,17 @@ import SingleFootball from "../Screens/UserScreen.tsx/SingleFootball";
 import { createStackNavigator } from "@react-navigation/stack";
 import OneTime from "./OneTime";
 import HomeBooking from "../Screens/UserScreen.tsx/HomeBooking";
+import Navigation from "../BottomNavigation/Navigation";
+import FindPitch from "../Screens/FindPitch";
 const Stack = createStackNavigator();
 const Datsan:  React.FC<{navigation:any}>=({navigation})=>{
     return(
        
            <Stack.Navigator  >
+               
+
+                 <Stack.Screen name="FindPitch" component={FindPitch}  options={{headerShown: false}}/>
+
                  <Stack.Screen name="HomeBooking" component={HomeBooking}  options={{headerShown: false}}/>
                 {/* <Stack.Screen name="SingleFootball" component={SingleFootball} options={{headerShown: false}} />  */}
                 {/* <Stack.Screen name="Navigation" component={Navigation} /> */}

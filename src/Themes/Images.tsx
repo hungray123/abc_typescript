@@ -10,6 +10,10 @@ const Images={
     gg: require("../Themes/gg.png"),
     tw: require("../Themes/tw.png"),
     left:require("../Themes/left-arrow.png"),
-    right:require("../Themes/right-arrow.png")
+    right:require("../Themes/right-arrow.png"),
+    BG:require("../Themes/backgroundFootball.jpg"),
+    purpleBG:require("../Themes/bgPurple.jpg"),
+    whiteBG:require("../Themes/bg2.jpg"),
+    mini: require("../Themes/mini2.png")
 }
 export default Images;

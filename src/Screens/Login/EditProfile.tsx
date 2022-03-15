@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import {
+  Alert,
   Image,
+  ImageBackground,
+  StatusBar,
   StyleSheet,
   Text,
   TextInput,
@@ -9,46 +12,64 @@ import {
 } from "react-native";
 import Images from "../../Themes/Images";
 import Icon from "react-native-vector-icons/FontAwesome";
-const EditProfile: React.FC = () => {
+const STYLES = ['default', 'dark-content', 'light-content'];
+interface Props{
+  route:any
+
+   navigation:any;
+}
+const EditProfile: React.FC<Props> = ({navigation,route}) => {
+  const {name}=route.params;
   return (
     <View style={Styles.container}>
-      <View style={Styles.View_Top}>
+      <StatusBar translucent backgroundColor="rgba(0,0,0,0)" barStyle="light-content" />
+      <ImageBackground source={Images.purpleBG} resizeMode="cover" imageStyle={{borderBottomLeftRadius:5,borderBottomRightRadius:5}} style={Styles.View_Top}>
         <View style={Styles.View_top_header}>
           <View style={{ width: "33%" }}>
             <Text></Text>
           </View>
           <View style={Styles.Title_Header_block}>
-            <Text style={Styles.Title_Header}>Thong tin</Text>
+            <Text style={Styles.Title_Header}>Thông tin</Text>
           </View>
-          <View style={Styles.btn_Save_block}>
+          {/* <View style={Styles.btn_Save_block}>
             <TouchableOpacity>
               <Text style={Styles.btn_Save}> Save</Text>
             </TouchableOpacity>
-          </View>
+          </View> */}
         </View>
         <View style={Styles.View_top_body}>
           <Image source={Images.Img_Profile} style={Styles.Avatar} />
-          <Text style={Styles.txt_UserName}>JONNY KEN</Text>
+          <TouchableOpacity onPress={()=>{navigation.navigate('EditScreen',{id:1,title:"Họ & tên",name:name})}}>
+            <View style={{ flexDirection: "row",justifyContent: "center",alignItems: "center",marginLeft:30}}>
+            <Text style={Styles.txt_UserName}>{name}</Text>
+              <Icon name="pencil" size={25} color="gray" style={{marginLeft:10}} />
+            </View>
+          </TouchableOpacity>
         </View>
-      </View>
+      </ImageBackground>
       <View style={Styles.View_body}>
+       <TouchableOpacity onPress={()=>{navigation.navigate('EditScreen',{id:2,title:"Email",name:"hungvan804@gmail.comm"})}}>
         <View style={Styles.body_block}>
-          <View style={{ flexDirection: "row" }}>
-            <Icon name="pencil" size={20} color="#900" style={{ padding: 5 }} />
-            <Text style={Styles.txt_info}> Email</Text>
+            <View style={{ flexDirection: "row" }}>
+              <Icon name="pencil" size={20} color="#900" style={{ padding: 5 }} />
+              <Text style={Styles.txt_info}> Email</Text>
+            </View>
+            <TextInput
+              editable={false}
+              placeholder="Hungvan804@gmail.com"
+              style={Styles.txt_info_2}
+            />
           </View>
-          <TextInput
-            placeholder="Hungvan804@gmail.com"
-            style={Styles.txt_info_2}
-          />
-        </View>
+       </TouchableOpacity>
+       <TouchableOpacity onPress={()=>{navigation.navigate('EditScreen',{id:3,title:"Điện thoại",name:"0961461262"})}}>
         <View style={Styles.body_block}>
           <View style={{ flexDirection: "row" }}>
             <Icon name="mobile" size={24} color="#900" style={{ padding: 5 }} />
             <Text style={Styles.txt_info}> Điện thoại</Text>
           </View>
-          <TextInput placeholder="0961461262" style={Styles.txt_info_2} />
+          <TextInput editable={false} placeholder="0961461262" style={Styles.txt_info_2} />
         </View>
+        </TouchableOpacity>
         <View style={Styles.body_block}>
           <View style={{ flexDirection: "row" }}>
             <Icon
@@ -72,8 +93,9 @@ const Styles = StyleSheet.create({
   },
   View_Top: {
     flex: 0.35,
-    backgroundColor: "purple",
-    borderRadius: 30,
+    height:"100%",
+    //backgroundColor: "purple",
+    borderRadius: 50,
   },
   View_top_header: {
     flexDirection: "row",
@@ -136,16 +158,20 @@ const Styles = StyleSheet.create({
     textAlign: "center",
     marginStart: 5,
     color: "white",
+    fontWeight: "bold",
   },
 
   //View_body
   View_body: {
     flex: 0.5,
+   marginTop: 20
   },
   body_block: {
     marginHorizontal: 30,
     marginTop: 5,
-    paddingVertical: 15,
+    //paddingVertical: 15,
+    elevation:20,
+    backgroundColor:'white',borderRadius:10
   },
   txt_info: {
     fontSize: 15,
@@ -154,7 +180,7 @@ const Styles = StyleSheet.create({
     marginTop: 5,
   },
   txt_info_2: {
-    fontSize: 20,
+    fontSize: 15,
     paddingVertical: 3,
     color: "black",
     marginHorizontal: 33,

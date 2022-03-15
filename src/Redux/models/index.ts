@@ -10,18 +10,15 @@
 //     token:string
 // }
 export interface UserModel {
-    username: string;
-    password: string;
-   // token:string | null,
-    //error:any
+  username: string;
+  password: string;
 
-  
-  }
-export interface UserState{
-    //user: UserModel;
-    token:null,
-    isLoading:boolean
+  // token:string | null,
+  //error:any
 }
-
-
-
+export interface UserState {
+  //user: UserModel;
+  token: null;
+  isLoading: boolean;
+  isAdmin: null;
+}
