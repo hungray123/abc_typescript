@@ -189,9 +189,6 @@ const BookFootballPitch: React.FC<Props> = ({navigation,route}) => {
     }
 },[route.params?.ID_goback])
 
-    useEffect(()=>{
-      
-    })
   return (
     <View style={Styles.container}>
       <View style={Styles.header}>

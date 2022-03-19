@@ -1,26 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { View ,Text, Button, TextInput,StyleSheet,Image, TouchableOpacity} from "react-native";
-import { Icon } from "react-native-elements";
+import {Icon} from 'react-native-elements'
 import { useDispatch } from "react-redux";
 import Images from "../Themes/Images";
 
-const o_vuong=[
-    {
-        name1:'o1',
-    },
-    {
-        name1:'o2',
-    },
-  
-];
-const listTab=[
-    {
-        status:'Five'
-    },
-    {
-        status:'Seven'
-    }
-];
 type Props={
    
     ok:string;
@@ -31,7 +14,7 @@ const DetailsFootball: React.FC<{navigation:any,route:any}>=({navigation,route})
     const [data, setData] = React.useState('');
    // const aa=id;
    
-   
+   console.warn(id)
 
     useEffect(()=>{
         var date = new Date().getDate() //current date
@@ -51,9 +34,9 @@ const DetailsFootball: React.FC<{navigation:any,route:any}>=({navigation,route})
        // alert({params})
        // params.callback();//gọi  hàm callback
        //const aa= navigation.navigate('Sân 7',{screen:'HomeBooking',hung:id,});// truyền lại về View A
-       const aa= navigation.navigate('PaymentScreen',{ID_goback:id});// truyền lại về View A
+       const aa= navigation.navigate("PaymentScreen",{ID_next:id});// truyền lại về View A
        
-        // console.warn(aa)
+       
         // const {goBack}=navigation;
     
       //  goBack();
@@ -66,7 +49,7 @@ const DetailsFootball: React.FC<{navigation:any,route:any}>=({navigation,route})
         <View>
            <View style={styles.Header}>
                 <View style={styles.text_Date}>
-                    <Icon  name='calendar' type='font-awesome' color='white' />
+                    <Icon  name='calendar' color='white' />
                         <Text style={{height:30,fontSize:20, marginLeft:5,color:'white'}}>  
                         {currentDate}
                         </Text>
@@ -77,7 +60,7 @@ const DetailsFootball: React.FC<{navigation:any,route:any}>=({navigation,route})
             <View style={styles.Body_block}>
                 <View  style={styles.body_wrap}>
                     <View style={styles.top_block}>
-                    <Icon  name='timer' type='ionicons' color='black' style={{  marginVertical:3}} />
+                    <Icon name='timer'  color='black' style={{  marginVertical:3}} />
                         <Text style={styles.text_timeFootball}>  
                         15:00 - 16:30
                         </Text>

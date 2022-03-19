@@ -28,6 +28,7 @@ import { createStore } from "redux";
 import { UserReducer } from "./src/Redux/reducers/userReducer";
 import SplashScreen from "./src/Components/SplashScreen";
 import Profile from "./src/Screens/Login/Profile";
+
 const Stack = createStackNavigator();
 
 type Props = {

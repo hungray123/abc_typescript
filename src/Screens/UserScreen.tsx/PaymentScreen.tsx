@@ -4,34 +4,13 @@ import { Icon } from "react-native-elements";
 import { useDispatch } from "react-redux";
 import Images from "../../Themes/Images";
 
-const o_vuong=[
-    {
-        name1:'o1',
-    },
-    {
-        name1:'o2',
-    },
-  
-];
-const listTab=[
-    {
-        status:'Five'
-    },
-    {
-        status:'Seven'
-    }
-];
-type Props={
-   
-    ok:string;
-}
 const PaymentScreen: React.FC<{navigation:any,route:any}>=({navigation,route})=>{
     const [ currentDate, setCurrentDate]=useState('')
-    const {id} =route.params;
+    const {ID_next} =route.params;
     const [data, setData] = React.useState('');
    // const aa=id;
    
-   
+   console.warn(ID_next)
 
     // useEffect(()=>{
     //     var date = new Date().getDate() //current date
@@ -51,8 +30,8 @@ const PaymentScreen: React.FC<{navigation:any,route:any}>=({navigation,route})=>
        // alert({params})
        // params.callback();//gọi  hàm callback
        //const aa= navigation.navigate('Sân 7',{screen:'HomeBooking',hung:id,});// truyền lại về View A
-       const aa= navigation.navigate('BookFootballPitch',{ID_goback:id});// truyền lại về View A
-       
+       const aa= navigation.navigate('BookFootballPitch',{ID_goback:ID_next});// truyền lại về View A
+       //console.log(id);
         // console.warn(aa)
         // const {goBack}=navigation;
     
@@ -74,6 +53,8 @@ const PaymentScreen: React.FC<{navigation:any,route:any}>=({navigation,route})=>
                             <Text  style={styles.title_payment}>Sân: Sân cỏ Triệu phú</Text>
                             <Text  style={styles.title_payment}>Ngày: Thứ 2 15/03/2022 - 08:42:00</Text>
                             <Text  style={styles.title_payment}>---</Text>
+                            <Text  style={styles.title_payment}>{ID_next}</Text>
+                            
                     </View>
                     <View style={styles.body_body_view}>
                         <View style={styles.body_body_left}>
@@ -128,7 +109,7 @@ const PaymentScreen: React.FC<{navigation:any,route:any}>=({navigation,route})=>
                    <Text style={{fontWeight: 'bold',color:'red'}}>đ672.000</Text>
                </View>
                <View style={styles.payment_view_right}>
-                   <TouchableOpacity>
+                   <TouchableOpacity onPress={()=>back()}>
                          <Text style={{fontWeight: 'bold',color:'white',fontSize:16,marginHorizontal:10}}>Thanh toán</Text>
                    </TouchableOpacity>
                </View>
